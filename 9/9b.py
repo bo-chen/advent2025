@@ -94,6 +94,8 @@ def checkbordersinter(p1, p2):
     xs = sorted([p1[0],p2[0]])
     ys = sorted([p1[1],p2[1]])
 
+    # only intersections with segments internal to the rectangle matter. 
+    # So make the square a bit smaller ignore external intersections and guarantee internal intesections)
     if checkseginter([[xs[0],ys[0] + 0.1 ], [xs[1], ys[0] + 0.1]]) or\
             checkseginter([[xs[1] - 0.1,ys[0]], [xs[1] - 0.1, ys[1]]]) or\
             checkseginter([[xs[1],ys[1] - 0.1], [xs[0], ys[1] - 0.1]]) or\
